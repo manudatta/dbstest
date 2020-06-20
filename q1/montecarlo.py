@@ -28,7 +28,6 @@ def main(simulation_length):
     return prob(constraint, pdf, simulation_length)
 
 if __name__ == '__main__':
-    simulation_length = 1000000
     try:
         arg_count = len(sys.argv)
         print(arg_count)
