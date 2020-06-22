@@ -13,7 +13,7 @@ class Aggregator(object):
         self._call_count = -1
 
     def add(self, datum):
-        """ keep index for each col in tuple """
+        """ adds datum in aggregate reduces on every column entry also see indices """
         self._call_count += 1
         match, bucket = False, None
         for attr, d in zip(datum,self._value_dicts):
@@ -32,6 +32,7 @@ class Aggregator(object):
 
     @property
     def indices(self):
+        """ retuns aggregate list of added datum per index """
         return self._indices
 
 agg = Aggregator(3)

@@ -1,0 +1,27 @@
+OSX  ~/dev/dbstest/q4 
+  master ● ?  cat <(echo SET foo 1) - | nc 0.0.0.0 12001            ✔  16:27:02  192.168.1.78 IP  5.45G RAM  16.06 L
+ok
+ OSX  ~/dev/dbstest/q4 
+  master ● ?  cat <(echo PERSIST foo) - | nc 0.0.0.0 12001
+ok
+ OSX  ~/dev/dbstest/q4 
+  master ● ?  sqlite3 cache.db                        SIGPIPE(13)|0 ↵  16:27:42  192.168.1.78 IP  4.45G RAM  14.69 L
+SQLite version 3.28.0 2019-04-15 14:49:49
+Enter ".help" for usage hints.
+sqlite> select * from cached;
+-4733411890465623500|1|2020-06-22 08:27:41
+sqlite> .q
+ OSX  ~/dev/dbstest/q4 
+  master ● ?  cat <(echo GET foo) - | nc 0.0.0.0 12001              ✔  16:27:58  192.168.1.78 IP  4.41G RAM  14.36 L
+1
+ OSX  ~/dev/dbstest/q4 
+  master ● ?  cat <(echo DELETE foo) - | nc 0.0.0.0 12001
+ok
+ OSX  ~/dev/dbstest/q4 
+  master ● ?  sqlite3 cache.db                        SIGPIPE(13)|0 ↵  16:28:17  192.168.1.78 IP  4.25G RAM  13.70 L
+SQLite version 3.28.0 2019-04-15 14:49:49
+Enter ".help" for usage hints.
+sqlite> select * from cached;
+sqlite> .q
+ OSX  ~/dev/dbstest/q4 
+  master ● ?                               

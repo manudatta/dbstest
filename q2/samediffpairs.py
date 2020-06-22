@@ -1,5 +1,9 @@
+
 def same_diff_pairs(arr, diff):
-    """ returns all pairs in the arr with difference of diff"""
+    """ returns all pairs in the arr with difference of diff
+    uses a dictionary to keep complements of each entry in list
+    runs in linear time
+    """
     complementory_numbers = {}
     same_diff_pairs = []
     for num in arr:

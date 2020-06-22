@@ -1,6 +1,6 @@
 """
 Since the pdf function is symettric we can conclude the probibilty that X < Y is half.
-Running the simulation we can verify our reasoning. 
+Running the simulation we can verify our reasoning.
 """
 
 
